@@ -1,5 +1,6 @@
 package com.hackerrank.sample.product.infrastructure.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -18,6 +19,7 @@ public class QuestionAnswerEntity {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
+    @JsonIgnore
     private ProductEntity product;
 
     // Getters and setters...

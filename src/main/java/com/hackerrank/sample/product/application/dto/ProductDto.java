@@ -1,9 +1,12 @@
 package com.hackerrank.sample.product.application.dto;
 
+import com.hackerrank.sample.product.domain.model.PurchaseInfo;
+import com.hackerrank.sample.product.domain.model.Question;
+
 import java.util.List;
 
 public class ProductDto {
-    private String id;
+    private Long id;
     private String name;
     private String description;
     private double price;
@@ -20,14 +23,16 @@ public class ProductDto {
     private List<String> specifications;
     private List<String> additionalDetails;
     private List<String> specificTypeDetails;
+    private List<QuestionDto> questions;
+    private PurchaseInfoDto purchaseInfo;
 
     // getters y setters
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -133,5 +138,21 @@ public class ProductDto {
 
     public void setSpecificTypeDetails(List<String> specificTypeDetails) {
         this.specificTypeDetails = specificTypeDetails;
+    }
+
+    public List<QuestionDto> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<QuestionDto> questions) {
+        this.questions = questions;
+    }
+
+    public PurchaseInfoDto getPurchaseInfo() {
+        return purchaseInfo;
+    }
+
+    public void setPurchaseInfo(PurchaseInfoDto purchaseInfo) {
+        this.purchaseInfo = purchaseInfo;
     }
 }

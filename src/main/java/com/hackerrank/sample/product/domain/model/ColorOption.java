@@ -5,6 +5,19 @@ public class ColorOption {
     private String hexCode;
     private String imageUrl;
 
+    public ColorOption(){}
+
+    public ColorOption(String name, String hexCode) {
+        this.name = name;
+        this.hexCode = hexCode;
+    }
+
+    public ColorOption(String name, String hexCode, String imageUrl) {
+        this.name = name;
+        this.hexCode = hexCode;
+        this.imageUrl = imageUrl;
+    }
+
     public String getName() {
         return name;
     }

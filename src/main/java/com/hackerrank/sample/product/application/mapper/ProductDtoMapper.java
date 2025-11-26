@@ -4,12 +4,16 @@ import com.hackerrank.sample.product.application.dto.*;
 import com.hackerrank.sample.product.domain.model.*;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
 public class ProductDtoMapper {
 
     public static ProductDto toDto(Product domain) {
+
+        if (domain == null) return null;
+
         ProductDto dto = new ProductDto();
 
         dto.setId(domain.getId());
@@ -17,38 +21,78 @@ public class ProductDtoMapper {
         dto.setDescription(domain.getDescription());
         dto.setPrice(domain.getPrice());
 
-        if (domain.getRating() != null)
+        // Rating
+        if (domain.getRating() != null) {
             dto.setRating(toRatingDto(domain.getRating()));
+        }
 
-        if (domain.getOffer() != null)
+        // Offer
+        if (domain.getOffer() != null) {
             dto.setOffer(toOfferDto(domain.getOffer()));
+        }
 
-        dto.setProductImages(domain.getProductImages());
+        // Images
+        dto.setProductImages(
+                domain.getProductImages() != null ? domain.getProductImages() : List.of()
+        );
 
-        if (domain.getColors() != null)
-            dto.setColors(domain.getColors()
-                    .stream()
-                    .map(ProductDtoMapper::toColorDto)
-                    .collect(Collectors.toList()));
+        // Colors
+        if (domain.getColors() != null) {
+            dto.setColors(
+                    domain.getColors().stream()
+                            .map(ProductDtoMapper::toColorDto)
+                            .collect(Collectors.toList())
+            );
+        } else {
+            dto.setColors(List.of());
+        }
 
-        if (domain.getPaymentMethods() != null)
-            dto.setPaymentMethods(domain.getPaymentMethods()
-                    .stream()
-                    .map(ProductDtoMapper::toPaymentDto)
-                    .collect(Collectors.toList()));
+        // Payment methods
+        if (domain.getPaymentMethods() != null) {
+            dto.setPaymentMethods(
+                    domain.getPaymentMethods().stream()
+                            .map(ProductDtoMapper::toPaymentDto)
+                            .collect(Collectors.toList())
+            );
+        } else {
+            dto.setPaymentMethods(List.of());
+        }
 
+        // Highlights
         dto.setProductHighlights(domain.getProductHighlights());
+
+        // General features
         dto.setGeneralFeatures(domain.getGeneralFeatures());
+
+        // Specifications
         dto.setSpecifications(domain.getSpecifications());
+
+        // Additional Details
         dto.setAdditionalDetails(domain.getAdditionalDetails());
+
+        // Specific product type details
         dto.setSpecificTypeDetails(domain.getSpecificTypeDetails());
+
+        // Questions & answers (si tu DTO tiene este campo)
+        if (domain.getQuestions() != null) {
+            dto.setQuestions(
+                    domain.getQuestions().stream()
+                            .map(ProductDtoMapper::toQuestionAnswerDto)
+                            .collect(Collectors.toList())
+            );
+        }
+
+        // Purchase info (si tu DTO lo contiene)
+        if (domain.getPurchaseInfo() != null) {
+            dto.setPurchaseInfo(toPurchaseInfoDto(domain.getPurchaseInfo()));
+        }
 
         return dto;
     }
 
     private static RatingDto toRatingDto(Rating rating) {
         RatingDto dto = new RatingDto();
-        dto.setScore(rating.getScore());
+        dto.setScore(rating.getAverage());
         dto.setTotalReviews(rating.getTotalReviews());
         return dto;
     }
@@ -76,4 +120,24 @@ public class ProductDtoMapper {
         dto.setInterestFree(p.isInterestFree());
         return dto;
     }
+
+    private static QuestionDto toQuestionAnswerDto(Question qa) {
+        QuestionDto dto = new QuestionDto();
+        dto.setQuestion(qa.getQuestion());
+        dto.setAnswer(qa.getAnswer());
+        return dto;
+    }
+
+
+    private static PurchaseInfoDto toPurchaseInfoDto(PurchaseInfo pur) {
+        PurchaseInfoDto dto = new PurchaseInfoDto();
+        dto.setEstimatedArrivalDto(pur.getEstimatedArrival());
+        dto.setPickupLocationDto(pur.getPickupLocation());
+        dto.setSoldQuantityDto(pur.getSoldQuantity());
+        dto.setAvailableStockDto(pur.getAvailableStock());
+        dto.setShippingMethodDto(pur.getShippingMethod());
+        dto.setSellerNameDto(pur.getSellerName());
+        return dto;
+    }
+
 }

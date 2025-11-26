@@ -21,10 +21,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public Product findById(Long id) {
-        //ProductEntity entity = jpaRepository.findById(id)
-          //      .orElseThrow(() -> new RuntimeException("Product not found"));
-        ProductEntity entity = MockProductFactory.createMockProduct();
-
+        ProductEntity entity = jpaRepository.findById(id)
+                .orElseGet(MockProductFactory::createMockProduct);
 
         return mapper.toDomain(entity);
     }

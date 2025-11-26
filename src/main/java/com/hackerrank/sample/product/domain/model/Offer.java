@@ -1,9 +1,18 @@
 package com.hackerrank.sample.product.domain.model;
 
 public class Offer {
-    private boolean hasDiscount;
-    private int discountPercentage;
-    private double finalPrice;
+
+    private Boolean hasDiscount;
+    private Double discountPercentage;
+    private Double finalPrice;
+
+    public Offer(){}
+
+    public Offer(Boolean hasDiscount, Double discountPercentage, Double finalPrice) {
+        this.hasDiscount = hasDiscount;
+        this.discountPercentage = discountPercentage;
+        this.finalPrice = finalPrice;
+    }
 
     public boolean isHasDiscount() {
         return hasDiscount;
@@ -13,19 +22,19 @@ public class Offer {
         this.hasDiscount = hasDiscount;
     }
 
-    public int getDiscountPercentage() {
+    public Double getDiscountPercentage() {
         return discountPercentage;
     }
 
-    public void setDiscountPercentage(int discountPercentage) {
+    public void setDiscountPercentage(Double discountPercentage) {
         this.discountPercentage = discountPercentage;
     }
 
-    public double getFinalPrice() {
+    public Double getFinalPrice() {
         return finalPrice;
     }
 
-    public void setFinalPrice(double finalPrice) {
+    public void setFinalPrice(Double finalPrice) {
         this.finalPrice = finalPrice;
     }
 }

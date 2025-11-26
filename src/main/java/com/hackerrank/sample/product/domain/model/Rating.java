@@ -1,22 +1,28 @@
 package com.hackerrank.sample.product.domain.model;
 
 public class Rating {
-    private double score;
-    private int totalReviews;
+    private Double average;
+    private Integer totalReviews;
 
-    public double getScore() {
-        return score;
+    public Rating(){}
+    public Rating(Double average, Integer totalReviews) {
+        this.average = average;
+        this.totalReviews = totalReviews;
     }
 
-    public void setScore(double score) {
-        this.score = score;
+    public Double getAverage() {
+        return average;
     }
 
-    public int getTotalReviews() {
+    public void setAverage(Double average) {
+        this.average = average;
+    }
+
+    public Integer getTotalReviews() {
         return totalReviews;
     }
 
-    public void setTotalReviews(int totalReviews) {
+    public void setTotalReviews(Integer totalReviews) {
         this.totalReviews = totalReviews;
     }
 }

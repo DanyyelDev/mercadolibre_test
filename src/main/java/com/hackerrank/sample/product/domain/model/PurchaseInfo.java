@@ -1,49 +1,70 @@
 package com.hackerrank.sample.product.domain.model;
 
 public class PurchaseInfo {
-    private DeliveryInfo deliveryInfo;
-    private StockInfo stockInfo;
-    private SellerInfo sellerInfo;
-    private ReturnPolicy returnPolicy;
-    private boolean purchaseProtection;
+    private String estimatedArrival;
+    private String pickupLocation;
 
-    public DeliveryInfo getDeliveryInfo() {
-        return deliveryInfo;
+    private Integer soldQuantity;
+    private Integer availableStock;
+
+    private String shippingMethod;
+
+    private String sellerName;
+
+    public PurchaseInfo(String estimatedArrival, String pickupLocation, Integer soldQuantity, Integer availableStock, String shippingMethod, String sellerName) {
+        this.estimatedArrival = estimatedArrival;
+        this.pickupLocation = pickupLocation;
+        this.soldQuantity = soldQuantity;
+        this.availableStock = availableStock;
+        this.shippingMethod = shippingMethod;
+        this.sellerName = sellerName;
     }
 
-    public void setDeliveryInfo(DeliveryInfo deliveryInfo) {
-        this.deliveryInfo = deliveryInfo;
+    public String getEstimatedArrival() {
+        return estimatedArrival;
     }
 
-    public StockInfo getStockInfo() {
-        return stockInfo;
+    public void setEstimatedArrival(String estimatedArrival) {
+        this.estimatedArrival = estimatedArrival;
     }
 
-    public void setStockInfo(StockInfo stockInfo) {
-        this.stockInfo = stockInfo;
+    public String getPickupLocation() {
+        return pickupLocation;
     }
 
-    public SellerInfo getSellerInfo() {
-        return sellerInfo;
+    public void setPickupLocation(String pickupLocation) {
+        this.pickupLocation = pickupLocation;
     }
 
-    public void setSellerInfo(SellerInfo sellerInfo) {
-        this.sellerInfo = sellerInfo;
+    public Integer getSoldQuantity() {
+        return soldQuantity;
     }
 
-    public ReturnPolicy getReturnPolicy() {
-        return returnPolicy;
+    public void setSoldQuantity(Integer soldQuantity) {
+        this.soldQuantity = soldQuantity;
     }
 
-    public void setReturnPolicy(ReturnPolicy returnPolicy) {
-        this.returnPolicy = returnPolicy;
+    public Integer getAvailableStock() {
+        return availableStock;
     }
 
-    public boolean isPurchaseProtection() {
-        return purchaseProtection;
+    public void setAvailableStock(Integer availableStock) {
+        this.availableStock = availableStock;
     }
 
-    public void setPurchaseProtection(boolean purchaseProtection) {
-        this.purchaseProtection = purchaseProtection;
+    public String getShippingMethod() {
+        return shippingMethod;
+    }
+
+    public void setShippingMethod(String shippingMethod) {
+        this.shippingMethod = shippingMethod;
+    }
+
+    public String getSellerName() {
+        return sellerName;
+    }
+
+    public void setSellerName(String sellerName) {
+        this.sellerName = sellerName;
     }
 }

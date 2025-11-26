@@ -5,6 +5,12 @@ public class Question {
     private String answer;
     private String date;
 
+    public Question(String question, String answer, String date) {
+        this.question = question;
+        this.answer = answer;
+        this.date = date;
+    }
+
     public String getQuestion() {
         return question;
     }

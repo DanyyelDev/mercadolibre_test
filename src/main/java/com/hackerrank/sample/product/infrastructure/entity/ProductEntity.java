@@ -1,5 +1,7 @@
 package com.hackerrank.sample.product.infrastructure.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -32,6 +34,7 @@ public class ProductEntity {
 
     // Colors
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<ColorOptionEntity> colors;
 
     // String lists

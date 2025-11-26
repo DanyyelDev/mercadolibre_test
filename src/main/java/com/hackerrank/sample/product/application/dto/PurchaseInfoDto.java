@@ -1,52 +1,63 @@
 package com.hackerrank.sample.product.application.dto;
 
 public class PurchaseInfoDto {
-    private DeliveryInfoDto delivery;
-    private StockInfoDto stock;
-    private SellerInfoDto seller;
-    private ReturnPolicyDto returnPolicy;
+    private String estimatedArrivalDto;
+    private String pickupLocationDto;
 
-    private boolean purchaseProtection;
+    private Integer soldQuantityDto;
+    private Integer availableStockDto;
+
+    private String shippingMethodDto;
+
+    private String sellerNameDto;
 
     // getters y setters
 
-    public DeliveryInfoDto getDelivery() {
-        return delivery;
+    public String getEstimatedArrivalDto() {
+        return estimatedArrivalDto;
     }
 
-    public void setDelivery(DeliveryInfoDto delivery) {
-        this.delivery = delivery;
+    public void setEstimatedArrivalDto(String estimatedArrivalDto) {
+        this.estimatedArrivalDto = estimatedArrivalDto;
     }
 
-    public StockInfoDto getStock() {
-        return stock;
+    public String getPickupLocationDto() {
+        return pickupLocationDto;
     }
 
-    public void setStock(StockInfoDto stock) {
-        this.stock = stock;
+    public void setPickupLocationDto(String pickupLocationDto) {
+        this.pickupLocationDto = pickupLocationDto;
     }
 
-    public SellerInfoDto getSeller() {
-        return seller;
+    public Integer getSoldQuantityDto() {
+        return soldQuantityDto;
     }
 
-    public void setSeller(SellerInfoDto seller) {
-        this.seller = seller;
+    public void setSoldQuantityDto(Integer soldQuantityDto) {
+        this.soldQuantityDto = soldQuantityDto;
     }
 
-    public ReturnPolicyDto getReturnPolicy() {
-        return returnPolicy;
+    public Integer getAvailableStockDto() {
+        return availableStockDto;
     }
 
-    public void setReturnPolicy(ReturnPolicyDto returnPolicy) {
-        this.returnPolicy = returnPolicy;
+    public void setAvailableStockDto(Integer availableStockDto) {
+        this.availableStockDto = availableStockDto;
     }
 
-    public boolean isPurchaseProtection() {
-        return purchaseProtection;
+    public String getShippingMethodDto() {
+        return shippingMethodDto;
     }
 
-    public void setPurchaseProtection(boolean purchaseProtection) {
-        this.purchaseProtection = purchaseProtection;
+    public void setShippingMethodDto(String shippingMethodDto) {
+        this.shippingMethodDto = shippingMethodDto;
+    }
+
+    public String getSellerNameDto() {
+        return sellerNameDto;
+    }
+
+    public void setSellerNameDto(String sellerNameDto) {
+        this.sellerNameDto = sellerNameDto;
     }
 }

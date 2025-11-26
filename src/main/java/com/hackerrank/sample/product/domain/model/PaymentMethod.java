@@ -5,6 +5,11 @@ public class PaymentMethod {
     private String type;
     private boolean interestFree;
 
+    public PaymentMethod(String name, String type, boolean interestFree) {
+        this.name = name;
+        this.type = type;
+    }
+
     public String getName() {
         return name;
     }

@@ -3,7 +3,7 @@ package com.hackerrank.sample.product.domain.model;
 import java.util.List;
 
 public class Product {
-    private String id;
+    private Long id;
     private String name;
     private String description;
     private double price;
@@ -20,12 +20,14 @@ public class Product {
     private List<String> specifications;
     private List<String> additionalDetails;
     private List<String> specificTypeDetails;
+    private List<Question> questions;
+    private PurchaseInfo purchaseInfo;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -131,5 +133,21 @@ public class Product {
 
     public void setSpecificTypeDetails(List<String> specificTypeDetails) {
         this.specificTypeDetails = specificTypeDetails;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    public PurchaseInfo getPurchaseInfo() {
+        return purchaseInfo;
+    }
+
+    public void setPurchaseInfo(PurchaseInfo purchaseInfo) {
+        this.purchaseInfo = purchaseInfo;
     }
 }

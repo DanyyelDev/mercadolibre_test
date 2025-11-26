@@ -20,12 +20,10 @@ public class MockProductFactory {
         rating.setTotalReviews(2450);
         product.setRatingEntity(rating);
 
-        // ---- Offer ----
-        OfferEntity offer = new OfferEntity();
-        offer.setActive(true);
-        offer.setDiscountPercentage(15.0);
-        offer.setDiscountedPrice(169.99);
-        product.setOfferEntity(offer);
+        // --- Offer ---
+        product.setOfferEntity(
+                new OfferEntity(true, 15.0, 169.99)
+        );
 
         product.setPrice(199.99);
 

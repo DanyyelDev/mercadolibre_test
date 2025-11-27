@@ -1,11 +1,6 @@
 package com.hackerrank.sample.product.infrastructure.mapper;
 
-import com.hackerrank.sample.product.application.mapper.ColorOptionMapper;
-import com.hackerrank.sample.product.application.mapper.OfferMapper;
-import com.hackerrank.sample.product.application.mapper.PaymentMethodMapper;
-import com.hackerrank.sample.product.application.mapper.PurchaseInfoMapper;
-import com.hackerrank.sample.product.application.mapper.QuestionMapper;
-import com.hackerrank.sample.product.application.mapper.RatingMapper;
+import com.hackerrank.sample.product.application.mapper.*;
 import com.hackerrank.sample.product.domain.model.ColorOption;
 import com.hackerrank.sample.product.domain.model.PaymentMethod;
 import com.hackerrank.sample.product.domain.model.Product;
